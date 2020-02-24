@@ -74,6 +74,16 @@ length of the image.
 We iterated through the image. For every pixel that is an edge, we iterated through the theta dimension of the hough space in order to find the 
 corresponding value of rho. To do this, we used the formula “rho = x cos(theta) + y sin(theta)”. This creates a Hough Space
 
+![test](https://github.com/dipam7/iu_computer_vision/blob/master/Assignment_1/test-images/hough_image.png)
+
+Then, we used maximum and minimum filters on the hough space to create a maxima. We set a threshold value and changed every pixel value to 0 if the 
+difference between the maximum value of the pixel and the minimum value of the pixel was not greater than this threshold.
+We used scipy’s ndimage tool to find features in the hough space after filtering, and we stored the polar coordinates of the centers of these objects 
+in an array.
+We iterated through this array and converted the polar coordinates into its corresponding cartesian coordinates. We repeated this process for every 
+detected feature to find the coordinates of the line.
+
+
 ![test](https://github.com/dipam7/iu_computer_vision/blob/master/Assignment_1/test-images/image_line_01.png)
 
 ![test](https://github.com/dipam7/iu_computer_vision/blob/master/Assignment_1/test-images/image_line_03.png)

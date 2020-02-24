@@ -4,6 +4,7 @@
 # Contributors: dvasani, pphadke, bparikh, smirjank
 The goal of this assignment is to build a simple Optical Music Recognition system to detect notes, quarter rests and eighth rests using the given templates. 
 
+![test](https://github.com/dipam7/iu_computer_vision/blob/master/Assignment_1/aim.png)
 
 Figure 1: (a): A portion of a musical score. (b): Output from a simple OMR system, where notes are shown in red, quarter rests are shown in green, and eighth rests are shown in blue.
 
@@ -22,9 +23,12 @@ We have given priority to write an optimized code in order to make the algorithm
 For each of these symbols, we have a black and white “template" i.e. a small “m x n” - pixel image containing just that symbol with black pixels indicating the symbol and white pixels indicating background.
 We create a template matching function which computes a score for how well each region of a padded image matches with the given template. To create such function we apply a Hamming distance between the two binary images.
 Mathematically,
+![test](https://github.com/dipam7/iu_computer_vision/blob/master/Assignment_1/equation.png)
 
 to perform the above function, we have used a convolution function that we mentioned before.
 Thus, we can see in order to convolve an image with the kernel we have to traverse through each row and column of an image with each row and column of the kernel (4 inners for loops - n4 time complexity) and hence we had to optimized the convolution operation to make time complexity - n2.
+
+To obtain better results, we have sharpened the images to be tested. This makes the template matching algorithm perform better. It was more precise compared to previous results.
 
 # Steps performed for Template Matching:
 After we obtain the Hamming distance matrix for the padded image, the pixels having high values signify that they are a better match for the template than the rest. 

@@ -66,3 +66,20 @@ The pixels chosen from the previous step are stored and we plot a box on the pad
 
 
 ![test](https://github.com/dipam7/iu_computer_vision/blob/master/Assignment_1/detected_rach.png)
+
+
+Steps performed for Hough Transform:
+We pre-defined the dimensions of the hough space. In the polar coordinate system, theta ranges from -π/2 to π/2 while rho ranges from 0 to the diagonal 
+length of the image.
+We iterated through the image. For every pixel that is an edge, we iterated through the theta dimension of the hough space in order to find the 
+corresponding value of rho. To do this, we used the formula “rho = x cos(theta) + y sin(theta)”. This creates a Hough Space
+
+![test](https://github.com/dipam7/iu_computer_vision/blob/master/Assignment_1/test-images/image_line_01.png)
+
+![test](https://github.com/dipam7/iu_computer_vision/blob/master/Assignment_1/test-images/image_line_03.png)
+
+![test](https://github.com/dipam7/iu_computer_vision/blob/master/Assignment_1/test-images/image_line_05.png)
+
+![test](https://github.com/dipam7/iu_computer_vision/blob/master/Assignment_1/test-images/image_line_08.png)
+
+![test](https://github.com/dipam7/iu_computer_vision/blob/master/Assignment_1/test-images/image_line_10.png)
